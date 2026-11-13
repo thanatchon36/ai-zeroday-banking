@@ -2,20 +2,25 @@
 
 <p align="center">
 <a href="requirements.txt"><img src="https://img.shields.io/badge/python-3.10%2B-f5a623?style=flat-square&labelColor=0b1020" alt="Python 3.10+"></a>
+<a href="https://thanatchon36.github.io/ai-zeroday-banking/paper/"><img src="https://img.shields.io/badge/paper-read%20online-f5a623?style=flat-square&labelColor=0b1020" alt="Paper: read online"></a>
 <a href="paper.pdf"><img src="https://img.shields.io/badge/paper-PDF-f5a623?style=flat-square&labelColor=0b1020" alt="Paper PDF"></a>
 <a href="paper/"><img src="https://img.shields.io/badge/arXiv-cs.CR%20%C2%B7%20cs.AI%20%C2%B7%20q--fin.RM-f5a623?style=flat-square&labelColor=0b1020" alt="arXiv category"></a>
 <a href="#data-sources"><img src="https://img.shields.io/badge/data-public%20(CVE%20%2B%20KEV)-b0560f?style=flat-square&labelColor=0b1020" alt="Data: public"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-ffe8a3?style=flat-square&labelColor=0b1020" alt="Code license MIT"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/paper%20%26%20data-CC%20BY%204.0-ffe8a3?style=flat-square&labelColor=0b1020" alt="Paper and data CC BY 4.0"></a>
+<a href="https://zenodo.org/badge/latestdoi/1456110038"><img src="https://zenodo.org/badge/1456110038.svg" alt="DOI"></a>
+<a href="https://huggingface.co/datasets/thanatchon36/ai-zeroday-banking"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20dataset-ai--zeroday--banking-f5a623?style=flat-square&labelColor=0b1020" alt="Hugging Face dataset"></a>
+<a href="https://huggingface.co/thanatchon36/ai-zeroday-banking"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20model-ai--zeroday--banking-f5a623?style=flat-square&labelColor=0b1020" alt="Hugging Face model"></a>
 </p>
 
 <p align="center">
+📖 <b><a href="https://thanatchon36.github.io/ai-zeroday-banking/paper/">Read the paper online</a></b> ·
 📄 <b><a href="paper.pdf">Download the PDF</a></b> ·
 📝 <b><a href="paper/">LaTeX source</a></b> ·
 🔢 <b><a href="outputs/key_numbers.json">Key numbers</a></b> ·
-📊 <b><a href="outputs/figures/">Figures</a></b> ·
 🗂️ <b><a href="data/curated/">Curated data</a></b> ·
-📚 <b><a href="CITATION.cff">Cite</a></b>
+🤗 <b><a href="https://huggingface.co/datasets/thanatchon36/ai-zeroday-banking">Dataset</a></b> ·
+🧮 <b><a href="https://huggingface.co/thanatchon36/ai-zeroday-banking">Model</a></b>
 </p>
 
 **AI-driven vulnerability discovery, systemic cyber risk in banking, and implications for central banks**,
@@ -91,6 +96,13 @@ It draws ten implications for central banks.
 
 - Tables: [`outputs/tables/`](outputs/tables/) · Figures: [`outputs/figures/`](outputs/figures/)
 - Every number in the text: [`outputs/key_numbers.json`](outputs/key_numbers.json)
+- Web reader: <https://thanatchon36.github.io/ai-zeroday-banking/paper/>, built from `paper/main.tex` by
+  `src/s11_web_reader.py` (pandoc) into `docs/paper/` and served by GitHub Pages
+- Dataset on Hugging Face: [`thanatchon36/ai-zeroday-banking`](https://huggingface.co/datasets/thanatchon36/ai-zeroday-banking),
+  with AI flags for all 405,375 CVEs, the AI-credited subset, the KEV panel, simulation draws, curated inputs and every table
+- Model card on Hugging Face: [`thanatchon36/ai-zeroday-banking`](https://huggingface.co/thanatchon36/ai-zeroday-banking),
+  with the simulation's constants (`model_specs.json`), scenarios and code. It holds no weights: the model is a
+  parametric Monte Carlo with a fixed seed
 
 <p align="center"><img src="outputs/figures/fig11_sim_scenarios.png" alt="Scenario simulation: probability of systemic payment disruption" width="640"></p>
 
@@ -100,6 +112,7 @@ It draws ten implications for central banks.
 src/
   s00_fetch_data.sh         download CVE List V5 + CISA KEV
   s10_banner.py             dark README banner -> docs/assets/banner.png
+  s11_web_reader.py         web reader -> docs/paper/index.html (GitHub Pages)
   s01..s09_*.py             extract, AI credits, KEV panel, analysis, cases, Thai framework,
                             simulation, figures, LaTeX tables
 run_all.sh                  the whole pipeline end to end
@@ -130,5 +143,5 @@ Thai-like system, not Thailand. See the paper's limitations section.
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff). License: code MIT; paper, figures and curated data CC BY 4.0
+See [`CITATION.cff`](CITATION.cff); each release is archived on Zenodo (DOI badge above). License: code MIT; paper, figures and curated data CC BY 4.0
 (see [`LICENSE`](LICENSE)).
