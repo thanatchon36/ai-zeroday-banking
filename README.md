@@ -20,7 +20,8 @@
 🔢 <b><a href="outputs/key_numbers.json">Key numbers</a></b> ·
 🗂️ <b><a href="data/curated/">Curated data</a></b> ·
 🤗 <b><a href="https://huggingface.co/datasets/thanatchon36/ai-zeroday-banking">Dataset</a></b> ·
-🧮 <b><a href="https://huggingface.co/thanatchon36/ai-zeroday-banking">Model</a></b>
+🧮 <b><a href="https://huggingface.co/thanatchon36/ai-zeroday-banking">Model</a></b> ·
+📣 <b><a href="docs/linkedin_post.md">LinkedIn post</a></b>
 </p>
 
 **AI-driven vulnerability discovery, systemic cyber risk in banking, and implications for central banks**,
@@ -113,6 +114,7 @@ src/
   s00_fetch_data.sh         download CVE List V5 + CISA KEV
   s10_banner.py             dark README banner -> docs/assets/banner.png
   s11_web_reader.py         web reader -> docs/paper/index.html (GitHub Pages)
+  s12_linkedin_poster.py    LinkedIn poster -> docs/assets/linkedin_poster.png (Fira Sans, OFL)
   s01..s09_*.py             extract, AI credits, KEV panel, analysis, cases, Thai framework,
                             simulation, figures, LaTeX tables
 run_all.sh                  the whole pipeline end to end
