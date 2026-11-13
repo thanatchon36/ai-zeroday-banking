@@ -1,0 +1,17 @@
+\begin{tabular}{p{0.05\textwidth}p{0.19\textwidth}p{0.24\textwidth}p{0.16\textwidth}p{0.24\textwidth}}
+\toprule
+Year & Target & Attack class & Access required & Banking analogue \\
+\midrule
+2010 & EMV chip-and-PIN cards & Protocol logic flaw (PIN verification bypass) & Physical card and modified terminal & Card-present payments \\
+2017 & Infineon RSA key generation (ROCA) & Weak key generation (factorable public keys) & Remote (public key only) & Smart cards; tokens; TPMs; national ID used for e-banking \\
+2018 & Trezor; Ledger; KeepKey (wallet.fail) & Fault injection and supply-chain tampering & Physical device & Hardware authentication tokens; HSM tamper resistance \\
+2019 & Apple BootROM A5-A11 (checkm8) & Unpatchable BootROM memory-safety bug & Physical (USB) & Integrity of phones running mobile banking \\
+2019 & General-purpose HSM (research disclosure) & Firmware memory-safety bugs enabling key extraction & Network/API access to HSM & Payment and PIN HSMs in bank data centres \\
+2019 & Intel fTPM and STMicro TPM (TPM-Fail) & Timing side channel on ECDSA & Local or network timing & Server attestation and key storage \\
+2020 & Trezor One/T seed extraction & Voltage glitching of microcontroller & Physical (minutes) & Stolen token or HSM scenarios \\
+2021 & EMV contactless (Visa PIN bypass) & Protocol flaw allowing PIN bypass & Physical proximity (relay) & Contactless payments \\
+2023 & Ledger Connect Kit & Malicious library version published via compromised account & Remote & Banking SDKs and front-end libraries \\
+2024 & Infineon ECDSA in YubiKey 5 (EUCLEAK) & Electromagnetic side channel & Physical (lab equipment) & FIDO keys used by bank staff \\
+2025 & Bybit cold-wallet signing (Safe interface) & Manipulated transaction display (blind signing) & Remote (supplier compromise) & Maker-checker payment approval screens \\
+\bottomrule
+\end{tabular}

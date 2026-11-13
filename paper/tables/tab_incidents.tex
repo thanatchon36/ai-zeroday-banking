@@ -1,0 +1,46 @@
+\begin{longtable}{p{0.05\textwidth}p{0.28\textwidth}p{0.40\textwidth}p{0.13\textwidth}}
+\caption{Curated financial-sector incident set (purposive sample of well-documented public cases, author-coded; \textsuperscript{TH} = Thailand). Details should be verified against primary sources before citation.}\label{tab:incidents}\\
+\toprule
+Year & Victim & Initial vector (as publicly reported) & Zero-day? \\
+\midrule
+\endfirsthead
+\toprule
+Year & Victim & Initial vector (as publicly reported) & Zero-day? \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+2011 & RSA (SecurID vendor) & Spear-phishing with Flash zero-day in spreadsheet & Yes \\
+2013 & Shinhan, NongHyup and Jeju banks & Wiper pushed through compromised patch-management servers & No \\
+2014 & JPMorgan Chase & Stolen credentials on a server without two-factor authentication & No \\
+2015 & Carbanak/Anunak campaign (many banks) & Spear-phishing with known Office exploits then manual operations & No \\
+2015 & Tien Phong Bank (attempt) & Malware targeting SWIFT PDF reader workflow & No \\
+2016 & Bangladesh Bank & Malware in SWIFT environment with stolen operator credentials & No \\
+2016 & Government Savings Bank ATMs\textsuperscript{TH} & ATM malware (jackpotting) & No \\
+2017 & Polish banks via KNF website & Watering hole on regulator website with known browser-plugin exploits & No (n-day) \\
+2017 & National Bank of Ukraine and commercial banks (NotPetya) & Supply-chain update of accounting software plus EternalBlue worming & Supply chain \\
+2018 & SPEI participants (Banco de Mexico system) & Compromise of participant-side connection software & No \\
+2018 & Banco de Chile & Wiper as diversion during fraudulent SWIFT transfers & No \\
+2018 & Kasikornbank and Krungthai Bank\textsuperscript{TH} & Web-application vulnerabilities in customer-facing systems & No \\
+2018 & Cosmos Bank & ATM switch compromise and SWIFT fraud & No \\
+2019 & Capital One & Server-side request forgery against misconfigured cloud firewall & No \\
+2019 & Travelex & Ransomware via unpatched Pulse Secure VPN & No (n-day) \\
+2019 & European Central Bank BIRD website & Malware injected into externally hosted website & No \\
+2020 & SolarWinds Orion downstream customers & Trojanised software update (supply chain) & Supply chain \\
+2020 & New Zealand stock exchange & Volumetric DDoS & No \\
+2021 & Reserve Bank of New Zealand & Zero-day exploitation of Accellion FTA file-transfer appliance & Yes \\
+2021 & European Banking Authority & Microsoft Exchange zero-days (ProxyLogon) & Yes \\
+2021 & Thai card-not-present fraud wave\textsuperscript{TH} & Card-number enumeration and merchant-side abuse & No \\
+2022 & Bank Indonesia & Ransomware (vector not disclosed) & Unknown \\
+2022 & Bank of Zambia & Ransomware (vector not disclosed) & Unknown \\
+2022 & Thai mobile-banking remote-access malware scams\textsuperscript{TH} & Social engineering to install remote-access malware on Android phones & No \\
+2023 & Hatch Bank and others (GoAnywhere campaign) & Zero-day in Fortra GoAnywhere MFT & Yes \\
+2023 & Financial firms and their service providers (MOVEit campaign) & Zero-day in MOVEit Transfer & Yes \\
+2023 & ICBC Financial Services & Ransomware reportedly via Citrix Bleed after patch release & No (n-day; suspected) \\
+2023 & Bank of America customers via Infosys McCamish & Ransomware at outsourcer (vector not disclosed) & Unknown \\
+2023 & Latitude Financial & Stolen employee credentials at a vendor & No \\
+2024 & Patelco Credit Union & Ransomware (vector not disclosed) & Unknown \\
+2024 & Evolve Bank \& Trust & Ransomware after phishing & No \\
+2024 & Banks and payment firms (CrowdStrike update outage) & Faulty security-agent update (non-malicious) & Common mode \\
+2025 & Bybit & Compromise of multisig wallet interface supplier & Supply chain \\
+\end{longtable}

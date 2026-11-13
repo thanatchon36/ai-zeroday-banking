@@ -1,0 +1,4 @@
+year,reported,reported_alt,source
+2022,55,41,"reported: Mandiant annual zero-day analysis; alt: Google Project Zero year-in-review (counts as reported; verify against originals)"
+2023,97,,"Google TAG and Mandiant joint 2023 zero-day review (as reported; verify)"
+2024,75,,"Google Threat Intelligence Group 2024 zero-day exploitation analysis (as reported; verify)"

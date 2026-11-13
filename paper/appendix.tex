@@ -1,0 +1,35 @@
+\clearpage
+\appendix
+\section{AI-credit lexicon}\label{app:lexicon}
+Patterns are matched case-insensitively against the concatenated credit strings of each CVE record after removing the exclusion patterns (a human researcher whose given name is Claude; a username containing ``gpt''; the brand name of a human bug-bounty programme containing the letters ``AI''). When several patterns match, the lowest tier wins.
+{\small
+\input{tables/tab_lexicon}
+}
+
+\section{KEV category rules and banking-relevance weights}\label{app:rules}
+{\small
+\input{tables/tab_rules}
+\input{tables/tab_weights}
+}
+
+\section{AI vulnerability-discovery milestones}\label{app:milestones}
+\begin{table}[h]
+\centering
+\caption{Selected milestones (author-coded; verify dates and descriptions against the cited primary sources).}
+\label{tab:milestones}
+\scriptsize
+\input{tables/tab_milestones}
+\end{table}
+
+\section{Curated financial-sector incidents}\label{app:incidents}
+{\scriptsize
+\input{tables/tab_incidents}
+}
+
+\section{Reproducing the results}\label{app:repro}
+\begin{enumerate}[leftmargin=1.6em]
+\item \texttt{bash run\_all.sh} downloads the two public inputs (CVE List V5 bulk release; CISA KEV JSON) and runs \texttt{src/s01}--\texttt{s09}.
+\item \texttt{s01} flattens CVE records; \texttt{s02} flags AI-credited CVEs; \texttt{s03} builds the KEV panel; \texttt{s04} produces the empirical tables and \texttt{outputs/key\_numbers.json}; \texttt{s05} summarises the curated cases; \texttt{s06} scores the Thai groups; \texttt{s07} runs the simulation; \texttt{s08} draws figures; \texttt{s09} writes the LaTeX tables.
+\item \texttt{cd paper \&\& latexmk -pdf main.tex} compiles the paper.
+\end{enumerate}
+Results for a later snapshot will differ, because both sources are updated continuously. Seeds are fixed, so a given snapshot reproduces exactly.

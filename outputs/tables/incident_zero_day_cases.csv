@@ -1,0 +1,6 @@
+year,victim,product_category,impact
+2011,RSA (SecurID vendor),Office & document software,Data theft (token seed material)
+2021,Reserve Bank of New Zealand,Managed file transfer,Data theft
+2021,European Banking Authority,Email & collaboration,Intrusion and email outage
+2023,Hatch Bank and others (GoAnywhere campaign),Managed file transfer,Data theft
+2023,Financial firms and their service providers (MOVEit campaign),Managed file transfer,Data theft

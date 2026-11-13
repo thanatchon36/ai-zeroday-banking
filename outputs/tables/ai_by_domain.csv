@@ -1,0 +1,14 @@
+domain,n,tier1,share_pct
+Other software,378,62,23.7
+Java & web middleware,306,183,19.1
+Business & collaboration apps,183,149,11.5
+OS kernels & system,174,22,10.9
+Media & file parsers,148,10,9.3
+Browsers & JS engines,130,99,8.1
+"Cryptography, TLS & PKI",111,81,6.9
+Network libraries & tools,54,15,3.4
+Network & security appliances,48,3,3.0
+Office & document software,19,18,1.2
+Databases & data stores,19,10,1.2
+Virtualisation & language runtimes,16,6,1.0
+"CMS, plugins & small web apps",12,7,0.8

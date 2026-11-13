@@ -1,0 +1,13 @@
+date,event,actor,kind,source_type,confidence
+2016-08,DARPA Cyber Grand Challenge: fully autonomous systems find and patch bugs in a closed environment,DARPA,Capability,Programme report,High
+2024-02,Threat-intelligence reports describe state-linked actors using LLMs for reconnaissance and scripting,Microsoft and OpenAI,Misuse,Vendor threat report,High
+2024-04,Academic study reports an LLM agent exploiting most of a small set of one-day web vulnerabilities given their advisories,University researchers,Capability,Academic preprint,High
+2024-11,Big Sleep agent reports an exploitable memory-safety bug in SQLite before release,Google,Defensive discovery,Vendor blog,High
+2024-11,AI-generated fuzz targets in OSS-Fuzz report new vulnerabilities including one in OpenSSL,Google,Defensive discovery,Vendor blog,Medium
+2025-03,First CVE in our data crediting an autonomous AI system (XBOW),XBOW,Defensive discovery,CVE record,High
+2025-07,Big Sleep credited with a SQLite flaw that the vendor says was otherwise known only to threat actors,Google,Defensive discovery,CVE record and vendor blog,High
+2025-08,DARPA AI Cyber Challenge final: cyber-reasoning systems find and patch real open-source bugs,DARPA,Capability,Programme report,High
+2025-10,Agentic security researchers announced by major labs (Aardvark; CodeMender),OpenAI and Google DeepMind,Defensive discovery,Vendor announcement,Medium
+2025-11,Report of an espionage campaign in which an AI agent executed most tactical steps against about thirty organisations,Anthropic,Misuse,Vendor threat report,High
+2026-04,Restricted-access programme gives selected organisations a frontier model for defensive vulnerability discovery (Project Glasswing),Anthropic,Defensive discovery,Vendor announcement,Medium
+2026-10,Monthly CVE publications exceed four times the 2025 monthly level; AI systems credited on hundreds of CVEs per month,CVE Program data,Disclosure shock,CVE records (this paper),High

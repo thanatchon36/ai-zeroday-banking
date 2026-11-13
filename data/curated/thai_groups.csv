@@ -1,0 +1,13 @@
+group,short,attractiveness,exposure,concentration,defensive_capacity,systemic_importance,notes
+Large systemically important banks,D-SIBs,5,5,4,5,5,Largest deposit and payment shares; mature security operations; broad digital channels
+Other domestic commercial banks,Mid banks,3,4,4,3,3,Similar product stacks to D-SIBs with smaller security budgets
+Foreign bank branches and subsidiaries,Foreign banks,3,3,3,4,2,Group-level security functions; regional shared services
+Specialised financial institutions (state-owned),SFIs,4,4,4,3,4,Large retail and rural deposit bases; government transfer channels
+Virtual banks (licensed 2025),Virtual banks,3,5,5,3,2,Cloud-native and mobile-only; new operating history
+Non-bank payment and e-money providers,PSPs/e-money,3,5,4,2,3,High transaction volumes; heterogeneous maturity
+Non-bank lenders and card companies,Non-bank lenders,2,4,4,2,2,Customer data and credit lines; lighter cyber supervision
+Digital-asset exchanges and custodians,Digital assets,5,5,4,3,2,Irreversible high-value transfers; global targeting by state-linked groups
+Payment FMIs (RTGS; retail switch; card switch),Payment FMIs,5,2,3,5,5,Limited internet exposure; single points of failure
+Bank of Thailand corporate and supervisory IT,Central bank IT,4,3,3,4,4,Email and file-exchange pattern seen in RBNZ and EBA incidents
+Shared IT and cloud service providers to the sector,Shared providers,4,4,5,3,5,One-to-many access; common-mode failure channel
+Retail customers and their mobile devices,Customers,3,5,4,1,2,Fraud channel; zero-days rarely needed

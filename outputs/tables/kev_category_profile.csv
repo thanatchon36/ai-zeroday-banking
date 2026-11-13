@@ -1,0 +1,17 @@
+category,n,early_pct,median_lag,ransomware_pct,weight,internet_facing,zero_day_like,pressure,pressure_zd
+Enterprise edge & network infrastructure,162,59.9,5.0,21.0,1.0,1,97,162.0,97.0
+Operating systems & identity,131,61.8,0.0,20.6,0.7,0,81,91.69999999999999,56.699999999999996
+Enterprise applications & web frameworks,102,24.5,38.5,21.6,0.8,1,25,81.60000000000001,20.0
+IT management & remote access tools,82,48.8,9.0,29.3,0.9,1,40,73.8,36.0
+Email & collaboration,78,32.1,23.0,37.2,0.9,1,25,70.2,22.5
+Mobile platforms,72,70.8,1.0,0.0,0.6,1,51,43.199999999999996,30.599999999999998
+Unclassified,72,27.8,23.0,12.5,0.5,0,20,36.0,10.0
+Virtualisation & backup,34,29.4,24.5,23.5,0.8,0,10,27.200000000000003,8.0
+Browsers & plug-ins,44,93.2,1.0,2.3,0.6,0,41,26.4,24.599999999999998
+Managed file transfer,17,64.7,4.0,35.3,1.0,1,11,17.0,11.0
+Office & document software,22,63.6,3.0,9.1,0.6,0,14,13.2,8.4
+AI & automation platforms,12,25.0,29.5,8.3,0.7,1,3,8.399999999999999,2.0999999999999996
+Hardware firmware & chipsets,20,75.0,2.0,5.0,0.4,0,15,8.0,6.0
+Security & endpoint software,13,76.9,2.0,15.4,0.6,0,10,7.8,6.0
+SOHO routers NAS & IoT,29,17.2,48.0,3.4,0.2,1,5,5.800000000000001,1.0
+Industrial control & OT,8,12.5,85.0,0.0,0.1,0,1,0.8,0.1

@@ -1,0 +1,23 @@
+pattern,label,developer,tier,note
+big ?sleep,Big Sleep,Google,1,LLM vulnerability-research agent (Project Zero / DeepMind)
+\bxbow\b|xbow\.com,XBOW,XBOW,1,Autonomous AI penetration-testing system
+\bclaude\b|anthropic|glasswing|powered by mythos,Claude / Project Glasswing,Anthropic,1,Claude models and agents named as finder or co-finder
+\bcodex\b|aardvark,Codex Security / Aardvark,OpenAI,1,OpenAI agentic security researcher
+\bgpt-?\d|gpt-5,GPT model,OpenAI,1,GPT model named as finder
+\bAI (?:SAST|assistant|agent|agents)\b|security AI agent|\bAI-agent\b|ai-agent\b|\bLLM\b|large language model|AI[- ]assisted|AI[- ]powered|AI[- ]driven|neo ai engineer|AI vulnerability researcher,Other named AI tool,Various,1,Generic AI tool or agent named as finder
+\bopenai\b,OpenAI (organisation),OpenAI,2,Credited to OpenAI without naming a model
+\baisle\b,AISLE,AISLE,2,AI-native cyber-reasoning company
+depthfirst,depthfirst,depthfirst,2,AI-native security company
+zeropath,ZeroPath,ZeroPath,2,AI-native code scanning
+striga\.ai,Striga,Striga,2,AI-native security company
+zast\.ai,ZAST.AI,ZAST.AI,2,AI-native code scanning
+bugbunny\.ai,BugBunny.ai,BugBunny.ai,2,AI bug-hunting company
+codeant ai,CodeAnt AI,CodeAnt AI,2,AI code review company
+hacktron,Hacktron,Hacktron,2,AI security company
+\bxint\b,Xint,Theori,2,AI vulnerability-discovery product
+watchguard ai security research,WatchGuard AI Security Research,WatchGuard,2,Vendor AI research unit
+mopmonk,Mopmonk AI,Mopmonk AI,2,AI-named security research
+\bz\.ai\b,Z.ai,Zhipu AI,2,AI lab
+moonshot\.ai,Moonshot AI,Moonshot AI,2,AI lab
+horizon3\.ai,Horizon3.ai,Horizon3.ai,2,Autonomous penetration-testing company
+pwn\.ai|vexera|submersion|aether ai|innora\.ai|sectum ai|parameter\.ai|hexaplex ai|ultrared\.ai|codecome\.ai|accomplish\.ai|aurascape\.ai|corsen ai|vypr ai|opint\.ai|endor\.ai,Other AI-native organisation,Various,2,Smaller AI-named security organisations

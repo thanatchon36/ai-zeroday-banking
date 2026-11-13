@@ -1,0 +1,146 @@
+%=====================================================================
+\section{Thailand}\label{sec:thailand}
+
+\subsection{Institutional setting}
+Thailand's financial system combines a concentrated commercial banking sector, in which a small number of domestic systemically important banks (D-SIBs) account for most deposits and payments, with state-owned specialised financial institutions (SFIs) that serve retail, rural, housing and SME segments. A large non-bank payment and e-money sector operates under the Payment Systems Act B.E.~2560 (2017) \citep{thailand2017payment}. Virtual banks were licensed in 2025 under a framework issued in 2024 \citep{bot2024virtual}, and digital-asset exchanges and custodians are supervised by the securities regulator. The core payment infrastructure comprises the BOT-operated RTGS system (BAHTNET), the retail real-time payment system (PromptPay and related services operated by National ITMX) and card switching. The Cybersecurity Act B.E.~2562 (2019) designates the banking and financial sector as critical information infrastructure \citep{thailand2019cyber}, and the Thai Bankers' Association operates a sector CERT (TB-CERT).
+
+The four Thai cases in our incident set---ATM malware at a state-owned bank (2016), web-application data leaks at two large banks (2018), a card-not-present fraud wave (2021) and remote-access malware on customers' phones (2022--2023)---involved no zero-day. Thai institutions nevertheless run the same commercial perimeter, MFT, mail, IT-management and virtualisation products that appear in the KEV catalogue, so they sit in the path of the same global mass-exploitation waves.
+
+\subsection{Targets and vulnerable groups}
+Table~\ref{tab:thai} and Figure~\ref{fig:thai} report the group framework. Groups with the highest \emph{target} index are the D-SIBs, payment FMIs, shared IT and cloud providers, the BOT's corporate and supervisory IT, and SFIs. Groups with the highest \emph{vulnerability} index are retail customers and their devices, payment and e-money providers, virtual banks, shared providers, digital-asset firms and non-bank lenders. Combining the two, three groups rank highest: shared IT and cloud providers ($R=0.72$; in the top three in 86\% of robustness draws), D-SIBs (0.67; 73\%) and SFIs (0.59; 52\%). Digital-asset exchanges and custodians (0.56) and non-bank payment providers (0.52) follow.
+
+\begin{table}[!htbp]
+\centering
+\caption{Thai group framework: scores ($A$ attractiveness, $S$ systemic importance, $E$ exposure, $K$ concentration, $D$ defensive capacity), risk $R$, rank, 90\% rank interval and probability of ranking in the top three across 10,000 robustness draws. Scores are structured author judgements about groups, not assessments of institutions.}
+\label{tab:thai}
+\scriptsize
+\resizebox{\textwidth}{!}{\input{tables/tab_thai}}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{fig10_thai_groups.pdf}
+\caption{Thai group framework. (a) Target index vs.\ vulnerability index; bubble size is systemic importance; dotted lines are iso-risk contours. (b) Risk score with the probability of ranking in the top three across robustness draws.}
+\label{fig:thai}
+\end{figure}
+
+Three findings are robust to the perturbations. \emph{Shared providers rank at or near the top} because they combine one-to-many access with concentration: a single compromised outsourcer, cloud tenant or core-banking vendor creates correlated exposure across several banks, as the SolarWinds, MOVEit (via service providers) and CrowdStrike cases illustrate. \emph{D-SIBs are the main target but not the most vulnerable}: their defensive capacity offsets their exposure, yet their size makes any successful intrusion systemically relevant. \emph{Payment FMIs are high-value but low-vulnerability}: limited internet exposure and strong controls place them tenth, which is consistent with the absence of documented intrusions into core RTGS platforms in our incident set.
+
+\paragraph{Answer to RQ5.} The likely \emph{targets} in Thailand are the D-SIBs, payment infrastructure, digital-asset platforms and the BOT itself. The groups most at \emph{risk} are shared IT providers, D-SIBs and SFIs. The most \emph{vulnerable} entry points are smaller non-bank payment firms, new virtual banks with concentrated cloud dependence, and customers' devices---the last mainly as a fraud channel that seldom needs zero-days. Whether Thai banks ``survive'' depends less on whether a Thailand-specific zero-day exists than on how quickly Thai institutions close exposure to global ones, and on whether a compromise at one shared provider can be contained.
+
+%=====================================================================
+\section{Scenario simulation}\label{sec:sim}
+
+Tables~\ref{tab:simgroups}--\ref{tab:simparams} give the model's structure, calibration and scenarios. The base event rate of 86.7 exploited-vulnerability events per year across six enterprise layers comes from KEV. Edge and VPN products carry the highest rate (28.3 per year) and, with MFT, the highest zero-day share (0.61 and 0.67). For n-days, the median empirical KEV lag in these layers is 64 days. Scenario S0 represents conditions before 2022 (fewer zero-days, a 32-day time-to-exploit). S1 represents current conditions. S2 triples zero-day discovery and attacker throughput and shortens time-to-exploit to one day. S3 adds AI-enabled defence: patch times cut by 65\%, attack success reduced by 40\% through detection, and 30\% of bugs pre-empted. S4 adds vendor concentration to S2. S5 combines S3 with diversified vendor shares.
+
+\begin{table}[!htbp]
+\centering
+\caption{Simulated institution groups (stylised; patch medians refer to critical internet-facing vulnerabilities).}
+\label{tab:simgroups}
+\small
+\input{tables/tab_sim_groups}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\caption{Layer calibration from the KEV panel (CVEs published 2023--2025).}
+\label{tab:simlayers}
+\small
+\resizebox{\textwidth}{!}{\input{tables/tab_sim_layers}}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\caption{Scenario parameters. $m_d$: discovery multiplier; $\tau$: zero-day copycat time-to-exploit (days); $\kappa$: n-day lag factor; $p_{\text{mass}}$: share of mass campaigns; $m_o$: attacker throughput; $\beta$: patch-time factor; $\delta$: success factor (detection); $\phi$: pre-emption share.}
+\label{tab:simparams}
+\small
+\resizebox{\textwidth}{!}{\input{tables/tab_sim_params}}
+\end{table}
+
+\subsection{Results}
+Table~\ref{tab:simresults} and Figure~\ref{fig:sim} report 4,000 simulated years per scenario. Under current conditions (S1), the model gives about 5.5 compromised institutions per year, a 26.6\% annual probability that at least one D-SIB is compromised, a 3.0\% probability of an FMI compromise and a 5.0\% probability of a systemic event. The absolute levels depend on assumptions. The comparisons across scenarios are the informative part:
+
+\begin{itemize}
+\item \textbf{AI offence multiplies systemic risk.} S2 raises the probability of a systemic event to 24.9\%, 5.0 times S1. Across the robustness grid (Table~\ref{tab:simrobust}), the ratio ranges from 4.0 to 6.8.
+\item \textbf{AI defence recovers most of the loss.} S3 cuts the S2 probability to 9.8\%. Across the grid, defence removes 50--75\% of the systemic probability under AI offence (S3/S2 between 0.25 and 0.50).
+\item \textbf{Concentration amplifies.} With a dominant vendor holding 60\% of each layer, S4 reaches 35.2\%, 36--64\% above S2 across the grid.
+\item \textbf{Diversification helps less once defence is strong.} The S5/S3 ratio ranges from 0.67 to 1.15, so its benefit is not robust when defence is already effective.
+\end{itemize}
+
+\begin{table}[!htbp]
+\centering
+\caption{Simulation results (4,000 years per scenario). ``Systemic'': an event that disrupts $\ge10\%$ of payment value or any payment FMI.}
+\label{tab:simresults}
+\scriptsize
+\resizebox{\textwidth}{!}{\input{tables/tab_sim_results}}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{fig11_sim_scenarios.pdf}
+\caption{Scenario outcomes with 95\% confidence intervals: (a) annual probability of a systemic event, (b) probability that at least one D-SIB is compromised, (c) institutions compromised per year.}
+\label{fig:sim}
+\end{figure}
+
+Figure~\ref{fig:grid} varies the offence multiplier and the patch-time factor jointly. Offence dominates: at today's patch speed, the probability of a systemic event rises from 6\% to 45\% as the multiplier goes from 1 to 5. Faster patching alone has a modest effect. At a multiplier of 5, cutting patch times by 75\% lowers the probability only from 45\% to 40\%. When copycat exploitation starts within a day of disclosure and most damaging events begin as zero-days, the decisive defences act \emph{before} disclosure: pre-emptive discovery, smaller internet-facing exposure, detection and segmentation. This is the main operational lesson of the model.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.78\textwidth]{fig12_sim_grid.pdf}
+\caption{Annual probability of a systemic event (\%) by AI offence multiplier and patch-time factor (other parameters as in S2; 1,200 simulated years per cell).}
+\label{fig:grid}
+\end{figure}
+
+\begin{table}[!htbp]
+\centering
+\caption{Robustness of scenario results to deployment probability $\rho$ and mass-campaign hit rate $c_{\text{mass}}$ (P(systemic) in \%, 1,000 years per cell).}
+\label{tab:simrobust}
+\scriptsize
+\input{tables/tab_sim_robust}
+\end{table}
+
+%=====================================================================
+\section{Implications for central banks and the Bank of Thailand}\label{sec:policy}
+
+\subsection{Should central banks pay attention?}
+Yes, and the reason is specific to the evidence. Central banks meet this risk in three roles. As \emph{prudential supervisors}, they face a population of banks whose exposure is correlated through shared commercial products and providers, and whose patch workload has multiplied. As \emph{operators and overseers of payment infrastructure}, they run or supervise the nodes whose impairment turns an operational event into a systemic one \citep{cpmi2016guidance,eisenbach2022cyber}. As \emph{targets}, they hold sensitive supervisory and market data on the same commodity corporate IT that was compromised at the RBNZ and the EBA. AI changes each role: it multiplies discovery, shortens the effective response window, and gives defenders tools that are only effective if deployed sector-wide.
+
+\paragraph{Is the BOT exposed?} The BOT's core settlement infrastructure scores low on vulnerability in our framework. Its corporate and supervisory IT, however, has a high target value and a moderate exposure profile (rank 9 of 12, risk 0.43), and it follows the pattern of the documented central-bank intrusions. The probability that the BOT experiences an intrusion through a commercial-product vulnerability over a multi-year horizon is not negligible. The probability that such an intrusion disrupts settlement is much lower, provided segmentation and contingency arrangements hold.
+
+\subsection{Ten implications}
+\begin{enumerate}[leftmargin=1.6em]
+\item \textbf{Supervise patch latency on internet-facing products.} Treat time-to-remediate for known-exploited vulnerabilities in perimeter, MFT, mail and IT-management products as a prudential metric, with sector-wide reporting of patch-latency distributions and remediation targets measured in hours to days, not patch cycles.
+\item \textbf{Build a shared-vendor concentration register.} Map which products and providers each institution uses in critical layers, compute concentration, and require substitution and isolation plans for dominant vendors. The model shows that concentration amplifies AI-driven risk by 36--64\%.
+\item \textbf{Oversee critical third parties directly.} Shared IT and cloud providers rank highest in the Thai framework. Regimes for critical ICT third parties in other jurisdictions \citep{eu2022dora,boe2024ctp} offer templates for direct oversight, testing and incident obligations.
+\item \textbf{Move defence before disclosure.} Because patch speed alone has diminishing returns, prioritise reducing internet-facing exposure, segmenting corporate IT from payment operations, detecting exploitation, and pre-emptive discovery in the software banks depend on.
+\item \textbf{Pool AI-enabled defensive capacity.} Few Thai institutions can run frontier-model vulnerability research on their own. A sector capability---for example through TB-CERT with BOT support---could apply AI-assisted review to commonly used banking software, mobile-banking SDKs and cryptographic dependencies, and could coordinate access to restricted defensive programmes offered by AI developers \citep{anthropic2026glasswing}. Access to frontier models can itself be affected by foreign policy decisions: in June 2026 access to two frontier model families was temporarily suspended to comply with U.S.\ export controls and restored on 1 July \citep{anthropic2026access}. Contingency for such dependencies belongs in the plan.
+\item \textbf{Prepare for the volume shock.} With advisories quadrupling, institutions must triage by exploitation evidence (KEV-type catalogues, exploitation prediction) rather than by severity scores alone \citep{jacobs2021epss}. A Thai or ASEAN exploited-vulnerability catalogue, mapped to products used locally, would help.
+\item \textbf{Stress-test payment infrastructure for correlated impairment.} Scenario exercises should assume that several RTGS and retail-payment participants are impaired at once by a shared-product compromise, test offline and contingency settlement, and rehearse the kind of manual workaround used after the 2023 ICBC Financial Services incident.
+\item \textbf{Harden the central bank's own corporate IT.} Apply the lessons of the RBNZ and EBA cases: minimise on-premise exposure of file-transfer and mail systems, enforce zero-trust access for supervisory data exchange, and keep settlement systems isolated from corporate networks.
+\item \textbf{Govern AI platforms inside banks.} LLM gateways and workflow-automation tools became a KEV category in 2026. Banks should inventory them, treat internet-facing deployments as critical, and apply the same patch and access controls as for other perimeter software.
+\item \textbf{Improve data and international coordination.} Adopt common incident-reporting formats \citep{fsb2023reporting,fsb2025fire}, collect Thai patch-latency and incident data to calibrate models like ours, and share threat intelligence through regional and BIS channels. Plan for hardware trust anchors as well: inventory HSM, secure-element and cryptographic-library dependencies and build crypto-agility into digital-asset, tokenisation and CBDC projects.
+\end{enumerate}
+
+\paragraph{Answer to RQ6.} Central banks should treat AI-accelerated vulnerability discovery as a financial-stability issue now. The aim is not to predict a specific attack. Under plausible parameters, the combination of a disclosure shock, correlated vendor exposure and AI-scaled offence raises systemic risk several-fold, and most of that increase can be offset only by coordinated, sector-wide defence.
+
+%=====================================================================
+\section{Limitations}\label{sec:limits}
+
+\begin{itemize}
+\item \textbf{Measurement of AI involvement.} Credits are incomplete (43\% coverage in 2026) and absent for the largest commercial CNAs. Tier~2 is a proxy. AI assistance at level L1 is invisible. We cannot attribute the disclosure surge to AI causally.
+\item \textbf{KEV as ground truth.} KEV is curated by a U.S. agency, focuses on vulnerabilities relevant to U.S. federal systems, and lists exploitation when evidence becomes available. Listing lag is not the date exploitation began. Thai-specific exploitation may differ.
+\item \textbf{Classification.} Product categories and software domains come from keyword rules. About 7\% of KEV entries and a larger share of AI-credited CVEs are unclassified.
+\item \textbf{Curated cases and benchmarks.} The incident and hardware sets are purposive and author-coded from public reporting, and the industry zero-day counts used as benchmarks were taken from secondary reporting. All should be verified against primary sources.
+\item \textbf{Thai framework.} The scores are structured judgements at group level, made without confidential supervisory data. They should be replaced with supervisory evidence where available.
+\item \textbf{Simulation.} The model is stylised. Payment shares, patch speeds, success and disruption probabilities are assumptions, and only event rates are calibrated to data. Results are comparative across scenarios, not forecasts.
+\item \textbf{Timing.} The data are a snapshot as of 12 November 2026. Rapid change in AI capability may make the trajectory estimates obsolete quickly.
+\end{itemize}
+
+%=====================================================================
+\section{Conclusion}\label{sec:conclusion}
+
+The economics of zero-days are changing. In 2026, vulnerability disclosure in major commercial software rose several-fold, AI systems were credited on more than a thousand CVEs, and the credited share doubled every few months. So far, exploitation has grown more slowly than discovery, which suggests that defenders are capturing much of the early benefit. The incident record shows that zero-days reach banks through the commercial products and service providers they share with everyone else. For a system such as Thailand's, the main systemic vulnerability is therefore correlated exposure through shared vendors and providers, not a bespoke attack on core payments. Our scenarios suggest that AI-scaled offence could multiply systemic risk several times over, and that coordinated AI-enabled defence, reduced exposure and attention to concentration can recover most of that loss. Central banks are positioned to organise that coordination, and the evidence argues for starting now.
+
+\paragraph{Data and code availability.} All scripts, curated datasets, derived tables and figures are provided in the accompanying repository. Raw inputs are public: CVE List V5 (CVEProject/cvelistV5) and CISA KEV (cisagov/kev-data).
+
+\paragraph{Acknowledgement of tools.} Data processing, analysis and drafting were assisted by an AI system; the author is responsible for the content.

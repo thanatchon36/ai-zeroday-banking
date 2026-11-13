@@ -1,0 +1,17 @@
+category,weight,internet_facing,rationale
+Enterprise edge & network infrastructure,1.0,1,Perimeter VPN/firewall/ADC appliances front staff remote access and third-party links; pre-authentication bugs give direct entry
+Managed file transfer,1.0,1,Used for bank-to-bank batch files and corporate customer data exchange; repeated mass-exploitation campaigns
+IT management & remote access tools,0.9,1,Privileged tooling (RMM; help desk; CI/CD) gives fleet-wide control and is often run by outsourcers
+Email & collaboration,0.9,1,On-premise mail and collaboration servers hold sensitive data and staff credentials
+Virtualisation & backup,0.8,0,Hypervisor and backup compromise enables ransomware against core and recovery systems simultaneously
+Enterprise applications & web frameworks,0.8,1,ERP; middleware and web frameworks underpin internet banking back ends and internal workflow
+Operating systems & identity,0.7,0,Post-exploitation privilege escalation and directory compromise inside the estate
+AI & automation platforms,0.7,1,Newly adopted LLM gateways and workflow tools; often deployed quickly with broad data access
+Mobile platforms,0.6,1,Customer devices running mobile banking; exploited mainly for fraud and account takeover rather than bank intrusion
+Browsers & plug-ins,0.6,0,Employee endpoints; initial access via drive-by or targeted links
+Office & document software,0.6,0,Employee endpoints; initial access via documents
+Security & endpoint software,0.6,0,Agents with high privilege on every endpoint
+Hardware firmware & chipsets,0.4,0,Relevant to HSM; ATM and server firmware but rarely the first stage
+SOHO routers NAS & IoT,0.2,1,Mostly consumer and small-office devices; relevant to branch and home-worker edge and botnets
+Industrial control & OT,0.1,0,Data-centre facilities only; marginal for banking
+Unclassified,0.5,0,Neutral weight for unmatched products

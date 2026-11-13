@@ -1,0 +1,331 @@
+\begin{thebibliography}{56}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ablon and Bogart(2017)]{ablon2017zero}
+Lillian Ablon and Andy Bogart.
+\newblock Zero days, thousands of nights: The life and times of zero-day
+  vulnerabilities and their exploits.
+\newblock Technical Report RR-1751, RAND Corporation, 2017.
+
+\bibitem[Adelmann et~al.(2020)Adelmann, Elliott, Ergen, Gaidosch, Jenkinson,
+  Khiaonarong, Morozova, Schwarz, and Wilson]{adelmann2020cyber}
+Frank Adelmann, Jennifer Elliott, Ibrahim Ergen, Tamas Gaidosch, Nigel
+  Jenkinson, Tanai Khiaonarong, Anastasiia Morozova, Nadine Schwarz, and
+  Christopher Wilson.
+\newblock Cyber risk and financial stability: It's a small world after all.
+\newblock IMF Staff Discussion Note SDN/20/04, International Monetary Fund,
+  2020.
+
+\bibitem[Aldasoro et~al.(2022)Aldasoro, Gambacorta, Giudici, and
+  Leach]{aldasoro2022drivers}
+I{\~n}aki Aldasoro, Leonardo Gambacorta, Paolo Giudici, and Thomas Leach.
+\newblock The drivers of cyber risk.
+\newblock \emph{Journal of Financial Stability}, 60:\penalty0 100989, 2022.
+
+\bibitem[{Anthropic}(2025)]{anthropic2025espionage}
+{Anthropic}.
+\newblock Disrupting the first reported {AI}-orchestrated cyber espionage
+  campaign.
+\newblock Anthropic threat intelligence report, 2025.
+
+\bibitem[{Anthropic}(2026{\natexlab{a}})]{anthropic2026access}
+{Anthropic}.
+\newblock Statement on access to {Claude Fable} and {Claude Mythos}.
+\newblock \url{https://www.anthropic.com/news/fable-mythos-access},
+  2026{\natexlab{a}}.
+
+\bibitem[{Anthropic}(2026{\natexlab{b}})]{anthropic2026glasswing}
+{Anthropic}.
+\newblock Project glasswing.
+\newblock \url{https://www.anthropic.com/glasswing}, 2026{\natexlab{b}}.
+
+\bibitem[Arora et~al.(2010)Arora, Krishnan, Telang, and
+  Yang]{arora2010empirical}
+Ashish Arora, Ramayya Krishnan, Rahul Telang, and Yubao Yang.
+\newblock An empirical analysis of software vendors' patch release behavior:
+  Impact of vulnerability disclosure.
+\newblock \emph{Information Systems Research}, 21\penalty0 (1):\penalty0
+  115--132, 2010.
+
+\bibitem[{Bank of England} et~al.(2024){Bank of England}, {Prudential
+  Regulation Authority}, and {Financial Conduct Authority}]{boe2024ctp}
+{Bank of England}, {Prudential Regulation Authority}, and {Financial Conduct
+  Authority}.
+\newblock Operational resilience: Critical third parties to the {UK} financial
+  sector, policy statement, 2024.
+
+\bibitem[{Bank of Thailand}(2024)]{bot2024virtual}
+{Bank of Thailand}.
+\newblock Licensing framework for virtual banks.
+\newblock Bank of Thailand policy documents and press releases, 2024--2025,
+  2024.
+
+\bibitem[Basin et~al.(2021)Basin, Sasse, and Toro-Pozo]{basin2021emv}
+David Basin, Ralf Sasse, and Jorge Toro-Pozo.
+\newblock The {EMV} standard: Break, fix, verify.
+\newblock In \emph{2021 IEEE Symposium on Security and Privacy}, pages
+  1766--1781, 2021.
+
+\bibitem[Bhatt et~al.(2023)]{bhatt2023purple}
+Manish Bhatt et~al.
+\newblock Purple llama {CyberSecEval}: A secure coding benchmark for language
+  models.
+\newblock arXiv:2312.04724, 2023.
+
+\bibitem[{Big Sleep team}(2024)]{bigsleep2024}
+{Big Sleep team}.
+\newblock From naptime to big sleep: Using large language models to catch
+  vulnerabilities in real-world code.
+\newblock Google Project Zero blog, 2024.
+
+\bibitem[Bilge and Dumitra{\c{s}}(2012)]{bilge2012before}
+Leyla Bilge and Tudor Dumitra{\c{s}}.
+\newblock Before we knew it: An empirical study of zero-day attacks in the real
+  world.
+\newblock In \emph{Proceedings of the 2012 ACM Conference on Computer and
+  Communications Security}, pages 833--844, 2012.
+
+\bibitem[Bouveret(2018)]{bouveret2018cyber}
+Antoine Bouveret.
+\newblock Cyber risk for the financial sector: A framework for quantitative
+  assessment.
+\newblock IMF Working Paper 18/143, International Monetary Fund, 2018.
+
+\bibitem[Campana and B{\'e}drune(2019)]{campana2019hsm}
+Gabriel Campana and Jean-Baptiste B{\'e}drune.
+\newblock Everybody be cool, this is a robbery!
+\newblock Black Hat USA, 2019.
+
+\bibitem[{CPMI--IOSCO}(2016)]{cpmi2016guidance}
+{CPMI--IOSCO}.
+\newblock Guidance on cyber resilience for financial market infrastructures.
+\newblock Technical report, Bank for International Settlements, 2016.
+
+\bibitem[{CVE Program}(2026)]{cveprogram2026}
+{CVE Program}.
+\newblock {CVE List V5} bulk release, snapshot of 12 november 2026.
+\newblock \url{https://github.com/CVEProject/cvelistV5}, 2026.
+
+\bibitem[{Cybersecurity and Infrastructure Security Agency}(2021)]{cisa2021bod}
+{Cybersecurity and Infrastructure Security Agency}.
+\newblock Binding operational directive 22-01: Reducing the significant risk of
+  known exploited vulnerabilities, 2021.
+
+\bibitem[{Cybersecurity and Infrastructure Security Agency}(2026)]{cisa2026kev}
+{Cybersecurity and Infrastructure Security Agency}.
+\newblock Known exploited vulnerabilities catalog, version 2026.11.10.
+\newblock \url{https://github.com/cisagov/kev-data}, 2026.
+
+\bibitem[{DARPA}(2016)]{darpa2016cgc}
+{DARPA}.
+\newblock Cyber grand challenge.
+\newblock Programme materials, 2016.
+
+\bibitem[{DARPA}(2025)]{darpa2025aixcc}
+{DARPA}.
+\newblock {AI} cyber challenge ({AIxCC}) final competition results.
+\newblock Programme materials, 2025.
+
+\bibitem[Datko et~al.(2018)Datko, Quarta, and Roth]{datko2018walletfail}
+Josh Datko, Dmitry Quarta, and Thomas Roth.
+\newblock wallet.fail.
+\newblock Talk at the 35th Chaos Communication Congress (35C3), 2018.
+
+\bibitem[Duffie and Younger(2019)]{duffie2019cyber}
+Darrell Duffie and Joshua Younger.
+\newblock Cyber runs.
+\newblock Working Paper~51, Hutchins Center on Fiscal and Monetary Policy,
+  Brookings Institution, 2019.
+
+\bibitem[Eisenbach et~al.(2022)Eisenbach, Kovner, and Lee]{eisenbach2022cyber}
+Thomas~M. Eisenbach, Anna Kovner, and Michael~Junho Lee.
+\newblock Cyber risk and the {U.S.} financial system: A pre-mortem analysis.
+\newblock \emph{Journal of Financial Economics}, 145\penalty0 (3):\penalty0
+  802--826, 2022.
+
+\bibitem[{European Central Bank}(2024)]{ecb2024stress}
+{European Central Bank}.
+\newblock Results of the 2024 cyber resilience stress test.
+\newblock Technical report, ECB Banking Supervision, 2024.
+
+\bibitem[{European Parliament and Council}(2022)]{eu2022dora}
+{European Parliament and Council}.
+\newblock Regulation ({EU}) 2022/2554 on digital operational resilience for the
+  financial sector ({DORA}), 2022.
+
+\bibitem[Falliere et~al.(2011)Falliere, O~Murchu, and
+  Chien]{falliere2011stuxnet}
+Nicolas Falliere, Liam O~Murchu, and Eric Chien.
+\newblock {W32.Stuxnet} dossier, version 1.4.
+\newblock Technical report, Symantec Security Response, 2011.
+
+\bibitem[Fang et~al.(2024)Fang, Bindu, Gupta, and Kang]{fang2024oneday}
+Richard Fang, Rohan Bindu, Akul Gupta, and Daniel Kang.
+\newblock {LLM} agents can autonomously exploit one-day vulnerabilities.
+\newblock arXiv:2404.08144, 2024.
+
+\bibitem[{Financial Stability Board}(2018)]{fsb2018lexicon}
+{Financial Stability Board}.
+\newblock Cyber lexicon.
+\newblock Technical report, FSB, 2018.
+
+\bibitem[{Financial Stability Board}(2023)]{fsb2023reporting}
+{Financial Stability Board}.
+\newblock Recommendations to achieve greater convergence in cyber incident
+  reporting.
+\newblock Technical report, FSB, 2023.
+
+\bibitem[{Financial Stability Board}(2025)]{fsb2025fire}
+{Financial Stability Board}.
+\newblock Format for incident reporting exchange ({FIRE}).
+\newblock Technical report, FSB, 2025.
+
+\bibitem[Frei et~al.(2006)Frei, May, Fiedler, and Plattner]{frei2006large}
+Stefan Frei, Martin May, Ulrich Fiedler, and Bernhard Plattner.
+\newblock Large-scale vulnerability analysis.
+\newblock In \emph{Proceedings of the 2006 SIGCOMM Workshop on Large-Scale
+  Attack Defense}, pages 131--138, 2006.
+
+\bibitem[{Google DeepMind}(2025)]{deepmind2025codemender}
+{Google DeepMind}.
+\newblock Introducing {CodeMender}: An {AI} agent for code security.
+\newblock Google DeepMind blog, 2025.
+
+\bibitem[{Google Threat Analysis Group} and
+  {Mandiant}(2024)]{google2024zeroday}
+{Google Threat Analysis Group} and {Mandiant}.
+\newblock A year in review of zero-days exploited in-the-wild in 2023.
+\newblock Google report, 2024.
+
+\bibitem[{Google Threat Intelligence Group}(2025)]{gtig2025zeroday}
+{Google Threat Intelligence Group}.
+\newblock Hello 0-days, my old friend: A 2024 zero-day exploitation analysis.
+\newblock Google Cloud blog, 2025.
+
+\bibitem[Healey et~al.(2018)Healey, Mosser, Rosen, and Tache]{healey2018future}
+Jason Healey, Patricia Mosser, Katheryn Rosen, and Adriana Tache.
+\newblock The future of financial stability and cyber risk.
+\newblock Technical report, Brookings Institution, 2018.
+
+\bibitem[{International Monetary Fund}(2024)]{imf2024gfsr}
+{International Monetary Fund}.
+\newblock Cyber risk: A growing concern for macrofinancial stability.
+\newblock In \emph{Global Financial Stability Report, April 2024}, chapter~3.
+  2024.
+
+\bibitem[Jacobs et~al.(2021)Jacobs, Romanosky, Edwards, Adjerid, and
+  Roytman]{jacobs2021epss}
+Jay Jacobs, Sasha Romanosky, Benjamin Edwards, Idris Adjerid, and Michael
+  Roytman.
+\newblock Exploit prediction scoring system ({EPSS}).
+\newblock \emph{Digital Threats: Research and Practice}, 2\penalty0 (3), 2021.
+
+\bibitem[Kashyap and Wetherilt(2019)]{kashyap2019principles}
+Anil~K. Kashyap and Anne Wetherilt.
+\newblock Some principles for regulating cyber risk.
+\newblock \emph{AEA Papers and Proceedings}, 109:\penalty0 482--487, 2019.
+
+\bibitem[{Kingdom of Thailand}(2017)]{thailand2017payment}
+{Kingdom of Thailand}.
+\newblock Payment systems act {B.E.} 2560 (2017).
+\newblock Royal Thai Government Gazette, 2017.
+
+\bibitem[{Kingdom of Thailand}(2019)]{thailand2019cyber}
+{Kingdom of Thailand}.
+\newblock Cybersecurity act {B.E.} 2562 (2019).
+\newblock Royal Thai Government Gazette, 2019.
+
+\bibitem[{Kraken Security Labs}(2020)]{kraken2020trezor}
+{Kraken Security Labs}.
+\newblock Kraken identifies critical flaw in {Trezor} hardware wallets.
+\newblock Kraken blog, 2020.
+
+\bibitem[Langner(2013)]{langner2013kill}
+Ralph Langner.
+\newblock To kill a centrifuge: A technical analysis of what stuxnet's creators
+  tried to achieve.
+\newblock The Langner Group, 2013.
+
+\bibitem[{Mandiant}(2023)]{mandiant2023zeroday}
+{Mandiant}.
+\newblock Analysis of zero-day vulnerabilities exploited in 2022.
+\newblock Mandiant threat intelligence blog (title abbreviated), 2023.
+
+\bibitem[{Mandiant}(2024)]{mandiant2024tte}
+{Mandiant}.
+\newblock How low can you go? an analysis of 2023 time-to-exploit trends.
+\newblock Google Cloud blog, 2024.
+
+\bibitem[{Microsoft Threat Intelligence} and
+  {OpenAI}(2024)]{microsoft2024threat}
+{Microsoft Threat Intelligence} and {OpenAI}.
+\newblock Staying ahead of threat actors in the age of {AI}.
+\newblock Microsoft Security blog, 2024.
+
+\bibitem[Moghimi et~al.(2020)Moghimi, Sunar, Eisenbarth, and
+  Heninger]{moghimi2020tpmfail}
+Daniel Moghimi, Berk Sunar, Thomas Eisenbarth, and Nadia Heninger.
+\newblock {TPM-FAIL}: {TPM} meets timing and lattice attacks.
+\newblock In \emph{29th USENIX Security Symposium}, 2020.
+
+\bibitem[Murdoch et~al.(2010)Murdoch, Drimer, Anderson, and
+  Bond]{murdoch2010chip}
+Steven~J. Murdoch, Saar Drimer, Ross Anderson, and Mike Bond.
+\newblock Chip and {PIN} is broken.
+\newblock In \emph{2010 IEEE Symposium on Security and Privacy}, pages
+  433--446, 2010.
+
+\bibitem[Nemec et~al.(2017)Nemec, Sys, Svenda, Klinec, and
+  Matyas]{nemec2017roca}
+Matus Nemec, Marek Sys, Petr Svenda, Dusan Klinec, and Vashek Matyas.
+\newblock The return of coppersmith's attack: Practical factorization of widely
+  used {RSA} moduli.
+\newblock In \emph{Proceedings of the 2017 ACM SIGSAC Conference on Computer
+  and Communications Security}, pages 1631--1648, 2017.
+
+\bibitem[{OpenAI}(2025)]{openai2025aardvark}
+{OpenAI}.
+\newblock Introducing aardvark: {OpenAI}'s agentic security researcher.
+\newblock OpenAI announcement, 2025.
+
+\bibitem[Roche(2024)]{roche2024eucleak}
+Thomas Roche.
+\newblock {EUCLEAK}: Side-channel attack on the {YubiKey} 5 series.
+\newblock NinjaLab technical report, 2024.
+
+\bibitem[Stone(2022)]{stone2022review}
+Maddie Stone.
+\newblock The more you know, the more you know you don't know: A year in review
+  of 0-days used in-the-wild in 2021.
+\newblock Google Project Zero blog, 2022.
+
+\bibitem[Zetter(2014)]{zetter2014countdown}
+Kim Zetter.
+\newblock \emph{Countdown to Zero Day: Stuxnet and the Launch of the World's
+  First Digital Weapon}.
+\newblock Crown, 2014.
+
+\bibitem[Zhang et~al.(2024)]{zhang2024cybench}
+Andy~K. Zhang et~al.
+\newblock Cybench: A framework for evaluating cybersecurity capabilities and
+  risks of language models.
+\newblock arXiv:2408.08926, 2024.
+
+\bibitem[Zhu et~al.(2024)Zhu, Kellermann, Gupta, Li, Fang, Bindu, and
+  Kang]{zhu2024teams}
+Yuxuan Zhu, Antony Kellermann, Akul Gupta, Philip Li, Richard Fang, Rohan
+  Bindu, and Daniel Kang.
+\newblock Teams of {LLM} agents can exploit zero-day vulnerabilities.
+\newblock arXiv:2406.01637, 2024.
+
+\bibitem[Zhu et~al.(2025)]{zhu2025cvebench}
+Yuxuan Zhu et~al.
+\newblock {CVE-Bench}: A benchmark for {AI} agents' ability to exploit
+  real-world web application vulnerabilities.
+\newblock arXiv:2503.17332, 2025.
+
+\end{thebibliography}

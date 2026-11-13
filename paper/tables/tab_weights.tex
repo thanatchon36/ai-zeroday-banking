@@ -1,0 +1,29 @@
+\begin{longtable}{p{0.26\textwidth}p{0.06\textwidth}p{0.56\textwidth}}
+\caption{Banking-relevance weights $w_c$ by product category (author judgement; sensitivity analysed in Section~\ref{sec:exploitation}).}\label{tab:weights}\\
+\toprule
+Category & $w_c$ & Rationale \\
+\midrule
+\endfirsthead
+\toprule
+Category & $w_c$ & Rationale \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Enterprise edge \& network infrastructure & 1.0 & Perimeter VPN/firewall/ADC appliances front staff remote access and third-party links; pre-authentication bugs give direct entry \\
+Managed file transfer & 1.0 & Used for bank-to-bank batch files and corporate customer data exchange; repeated mass-exploitation campaigns \\
+IT management \& remote access tools & 0.9 & Privileged tooling (RMM; help desk; CI/CD) gives fleet-wide control and is often run by outsourcers \\
+Email \& collaboration & 0.9 & On-premise mail and collaboration servers hold sensitive data and staff credentials \\
+Virtualisation \& backup & 0.8 & Hypervisor and backup compromise enables ransomware against core and recovery systems simultaneously \\
+Enterprise applications \& web frameworks & 0.8 & ERP; middleware and web frameworks underpin internet banking back ends and internal workflow \\
+Operating systems \& identity & 0.7 & Post-exploitation privilege escalation and directory compromise inside the estate \\
+AI \& automation platforms & 0.7 & Newly adopted LLM gateways and workflow tools; often deployed quickly with broad data access \\
+Mobile platforms & 0.6 & Customer devices running mobile banking; exploited mainly for fraud and account takeover rather than bank intrusion \\
+Browsers \& plug-ins & 0.6 & Employee endpoints; initial access via drive-by or targeted links \\
+Office \& document software & 0.6 & Employee endpoints; initial access via documents \\
+Security \& endpoint software & 0.6 & Agents with high privilege on every endpoint \\
+Hardware firmware \& chipsets & 0.4 & Relevant to HSM; ATM and server firmware but rarely the first stage \\
+SOHO routers NAS \& IoT & 0.2 & Mostly consumer and small-office devices; relevant to branch and home-worker edge and botnets \\
+Industrial control \& OT & 0.1 & Data-centre facilities only; marginal for banking \\
+Unclassified & 0.5 & Neutral weight for unmatched products \\
+\end{longtable}

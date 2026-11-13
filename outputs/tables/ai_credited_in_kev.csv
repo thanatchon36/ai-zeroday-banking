@@ -1,0 +1,16 @@
+cveID,vendorProject,product,ai_label,date_published,dateAdded,lag_days,category
+CVE-2023-27524,Apache,Superset,Horizon3.ai,2023-04-24,2024-01-08,259,Enterprise applications & web frameworks
+CVE-2024-9465,Palo Alto Networks,Expedition,Horizon3.ai,2024-10-09,2024-11-14,36,Enterprise edge & network infrastructure
+CVE-2025-3248,Langflow,Langflow,Horizon3.ai,2025-04-07,2025-05-05,28,AI & automation platforms
+CVE-2025-5086,Dassault Systèmes,DELMIA Apriso,Hacktron,2025-06-02,2025-09-11,101,Industrial control & OT
+CVE-2025-40551,SolarWinds,Web Help Desk,Horizon3.ai,2026-01-28,2026-02-03,6,IT management & remote access tools
+CVE-2025-40536,SolarWinds,Web Help Desk,Horizon3.ai,2026-01-28,2026-02-12,15,IT management & remote access tools
+CVE-2026-34197,Apache,ActiveMQ,Horizon3.ai,2026-04-07,2026-04-16,9,Enterprise applications & web frameworks
+CVE-2026-48558,SimpleHelp ,SimpleHelp,Horizon3.ai,2026-06-12,2026-06-29,17,IT management & remote access tools
+CVE-2026-34486,Apache,Tomcat,Striga,2026-04-09,2026-08-04,117,Enterprise applications & web frameworks
+CVE-2026-66384,JFrog,Artifactory,OpenAI (organisation),2026-08-12,2026-08-27,15,IT management & remote access tools
+CVE-2026-42016,JFrog,Artifactory,OpenAI (organisation),2026-07-27,2026-09-11,46,IT management & remote access tools
+CVE-2026-5430,WSO2,Multiple Products,Hacktron,2026-08-06,2026-09-24,49,Enterprise applications & web frameworks
+CVE-2026-109618,PHP Group,PHP,OpenAI (organisation),2026-10-21,2026-10-26,5,Enterprise applications & web frameworks
+CVE-2026-109619,PHP Group,PHP,OpenAI (organisation),2026-10-21,2026-10-26,5,Enterprise applications & web frameworks
+CVE-2026-111497,Google,Brotli,Codex Security / Aardvark,2026-10-22,2026-10-27,5,Enterprise applications & web frameworks

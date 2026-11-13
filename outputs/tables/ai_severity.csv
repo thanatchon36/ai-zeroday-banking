@@ -1,0 +1,5 @@
+group,n_scored,mean_cvss,share_high_pct,share_critical_pct
+AI-credited (tier 1),593,7.07,56.8,9.8
+AI-credited (tier 2),796,6.83,47.6,9.0
+Human-credited,40338,6.98,51.3,12.4
+All other 2026 CVEs,89689,7.07,56.8,12.4

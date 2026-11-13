@@ -1,0 +1,181 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[scaled=0.92]{helvet}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,longtable,array,multirow,tabularx,threeparttable}
+\usepackage[font=small,labelfont=bf,skip=4pt]{caption}
+\usepackage[authoryear,round]{natbib}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor={blue!50!black},citecolor={blue!50!black},urlcolor={blue!50!black}]{hyperref}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{placeins}
+\usepackage{flafter}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.85}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\setlength{\floatsep}{10pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\raggedbottom
+\setlist{itemsep=2pt,topsep=3pt}
+\setlength{\parskip}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\graphicspath{{figures/}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Zero-Days at Machine Speed}
+\fancyhead[R]{\small Chongmankhong (2026)}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\title{\textbf{Zero-Days at Machine Speed:\\ AI-Driven Vulnerability Discovery, Systemic Cyber Risk\\ in Banking, and Implications for Central Banks}\\[4pt]
+\large Evidence from 405,375 CVE Records and the CISA KEV Catalogue, with Scenarios for Thailand}
+\author{Thanatchon Chongmankhong}
+\date{Preprint --- 12 November 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent
+Artificial intelligence (AI) systems now find software vulnerabilities at industrial scale. We ask what this means for banks, payment systems and central banks, with a focus on Thailand. We assemble four bodies of evidence: the full CVE List V5 (405,375 published records, snapshot of 12 November 2026); the CISA Known Exploited Vulnerabilities (KEV) catalogue (1,779 entries); a curated set of 33 financial-sector cyber incidents (2011--2025) and 11 hardware trust-anchor cases; and a group-level framework for the Thai financial system. We find, first, a \emph{disclosure shock}: CVE publications in January--October 2026 were 2.27 times the 2025 level, and monthly volume quadrupled between October 2025 and October 2026, led by large commercial vendors (Google Chrome $\times$33, Oracle $\times$13, Microsoft $\times$4). Second, at least 1,598 CVEs credit an AI model, agent or AI-native organisation; the monthly count has doubled roughly every four months since mid-2025, and AI-credited vulnerabilities are as severe as human-credited ones (mean CVSS 6.93 vs.\ 6.98, $p=0.66$). This is a lower bound, because vendors that publish most commercial CVEs record no credits. Third, exploitation has risen more slowly than discovery: KEV additions reached 295 in 2026 to date (245 in 2025), but the share of new CVEs exploited within 180 days fell from 3.9 to 2.6 per 1,000. A KEV-based zero-day proxy reproduces published industry counts for 2022--2024 within 7\%. Only 15 AI-credited CVEs have entered KEV, almost all as n-days found by offensive-security firms. Fourth, the incident record shows that zero-days reach financial institutions through shared commercial products---file-transfer appliances, mail servers and perimeter devices---not through core banking systems; perimeter devices rose from 14.6\% to 21.0\% of KEV additions between 2022 and 2026. A stylised Monte Carlo model of a Thai-like system, calibrated to KEV event rates, shows that a threefold AI-driven increase in offensive capacity raises the annual probability of a systemic payment disruption about fivefold (4.0--6.8$\times$ across parameterisations), that AI-enabled defence removes 50--75\% of that increase, and that vendor concentration amplifies it by a further 36--64\%. We draw ten implications for central banks, including patch-latency supervision of internet-facing products, a sector-wide register of shared-vendor concentration, and pooled AI-enabled defensive capacity.
+
+\medskip
+\noindent\textbf{Keywords:} zero-day vulnerabilities; artificial intelligence; cyber risk; financial stability; central banking; payment systems; Thailand\\
+\noindent\textbf{JEL:} E58, G21, G28, O33\quad \textbf{arXiv:} cs.CR (cross-list cs.AI, q-fin.RM)
+\end{abstract}
+
+\vspace{4pt}
+\noindent\fbox{\parbox{0.97\textwidth}{\small\textbf{Scope and ethics.} This study uses only public data. It contains no exploit code, no proof-of-concept, no scanning or testing of any institution's systems, and no statement about the security of any named Thai institution. The Thai analysis is at the level of institution groups and is based on structured expert judgement. Case descriptions and industry benchmark figures were coded from public reporting and should be verified against primary sources before citation.}}
+
+\newpage
+\tableofcontents
+\newpage
+
+%=====================================================================
+\section{Introduction}\label{sec:intro}
+
+For most of the history of computing, finding a previously unknown and exploitable software vulnerability---a \emph{zero-day}---was slow, expensive and the preserve of a small community of specialists. That scarcity shaped who could attack critical systems. The best-known example, Stuxnet, used four Windows zero-days and stolen code-signing certificates to sabotage uranium-enrichment centrifuges at Iran's Natanz facility \citep{falliere2011stuxnet,langner2013kill,zetter2014countdown}; it required resources available only to states. Banks have historically been attacked by cheaper means: stolen credentials, phishing, insiders and known but unpatched vulnerabilities.
+
+Since 2024 that scarcity has eroded. Large language model (LLM) agents have moved from solving capture-the-flag exercises \citep{zhang2024cybench} to exploiting known web vulnerabilities from their advisories \citep{fang2024oneday,zhu2024teams} and to finding new, real vulnerabilities in widely deployed software \citep{bigsleep2024,darpa2025aixcc}. Frontier AI developers now operate dedicated vulnerability-research agents \citep{openai2025aardvark,deepmind2025codemender,anthropic2026glasswing}, and at least one threat report describes an espionage campaign in which an AI agent executed most tactical steps \citep{anthropic2025espionage}. If the cost of discovering zero-days falls by an order of magnitude, the threat model for the financial system changes.
+
+This paper asks six questions:
+\begin{enumerate}[label=\textbf{RQ\arabic*.},leftmargin=3.2em]
+\item How much vulnerability discovery is now done with AI, by whom, and with what trajectory?
+\item Which commercial software has been exploited as a zero-day, and how has exploitation changed?
+\item Are hardware-wallet zero-days relevant to banks?
+\item Where is the global banking system exposed, and would AI-discovered zero-days be used against it?
+\item In Thailand, which groups of institutions are likely targets and which are most vulnerable?
+\item Should central banks, including the Bank of Thailand (BOT), treat this as a priority, and what should they do?
+\end{enumerate}
+
+We answer with four bodies of evidence. The first is the complete CVE List V5 \citep{cveprogram2026}, from whose free-text credits we identify AI-credited discoveries using a transparent, auditable lexicon. The second is the CISA KEV catalogue \citep{cisa2026kev}, which we turn into a panel of exploited vulnerabilities with product categories, disclosure-to-listing lags and a validated zero-day proxy. The third is a curated set of financial-sector incidents and hardware trust-anchor cases. The fourth is a group-level framework for Thailand together with a Monte Carlo model of shared-vendor contagion calibrated to KEV event rates.
+
+\paragraph{Contributions.} (i) We provide what is, to our knowledge, the first census of AI-credited CVEs across the full CVE corpus, with a documented lexicon and its known false positives. (ii) We document a 2026 disclosure shock in commercial software and show that exploitation has grown more slowly than disclosure. (iii) We validate a simple KEV-based zero-day proxy against published industry counts. (iv) We connect vulnerability data to financial-sector exposure through a bank-weighted exploitation-pressure measure and an incident record. (v) We offer a reproducible scenario model and a ten-point policy agenda for central banks. All code and derived data accompany the paper.
+
+\paragraph{Headline findings.} AI-assisted discovery is real, fast-growing and so far mostly defensive; exploitation of commercial perimeter and IT-management products is the main channel through which zero-days reach financial institutions; and the main systemic risk for a system such as Thailand's is correlated exposure through shared vendors and service providers rather than a direct attack on the core payment infrastructure. Section~\ref{sec:policy} sets out why these findings justify central-bank attention now.
+
+\paragraph{Roadmap.} Section~\ref{sec:background} sets out concepts; Section~\ref{sec:related} reviews related work; Section~\ref{sec:data} describes data and methods. Sections~\ref{sec:shock}--\ref{sec:exposure} present results on disclosure, AI discovery, exploitation, hardware and financial exposure. Section~\ref{sec:thailand} analyses Thailand, Section~\ref{sec:sim} reports the simulation, Section~\ref{sec:policy} discusses policy, and Section~\ref{sec:limits} states limitations.
+
+%=====================================================================
+\section{Background and concepts}\label{sec:background}
+
+\subsection{Zero-days, n-days and the exploitation window}
+A \emph{zero-day} is a vulnerability exploited before the vendor has disclosed it or made a fix available; an \emph{n-day} is exploited after disclosure, during the period in which users have not yet applied the fix. Figure~\ref{fig:lifecycle} places both on a single timeline. The zero-day window runs from first exploitation to disclosure; the n-day window runs from disclosure until each user deploys the patch. Historical studies found that zero-day attacks often persisted for months before discovery \citep{bilge2012before} and that stockpiled exploits had long expected lifetimes \citep{ablon2017zero}. More recent industry reporting suggests that the time from disclosure to exploitation has collapsed to days \citep{mandiant2024tte}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{fig01_lifecycle.pdf}
+\caption{Vulnerability lifecycle and points at which AI changes attacker and defender capabilities. Red boxes: offensive uses; green boxes: defensive uses. The zero-day window ends at disclosure; the n-day window ends when each institution deploys the patch.}
+\label{fig:lifecycle}
+\end{figure}
+
+\subsection{Levels of AI involvement}
+We distinguish five levels, because public debate often conflates them:
+\begin{description}[leftmargin=1.2em,style=nextline]
+\item[L0 --- No AI.] Human researchers using conventional tools such as fuzzers and static analysers.
+\item[L1 --- AI-assisted.] Humans use AI for code reading, triage or tooling. This is largely invisible in public records.
+\item[L2 --- AI-credited discovery.] An AI system, or an organisation whose product is AI-driven discovery, is credited in the vulnerability record. This is the level we measure.
+\item[L3 --- Autonomous discovery and exploitation.] An agent finds and weaponises a vulnerability end-to-end, as demonstrated in competitions and laboratory studies \citep{darpa2016cgc,darpa2025aixcc,zhu2024teams}.
+\item[L4 --- AI-orchestrated campaigns.] An agent executes most steps of an intrusion campaign against real targets; at least one such case has been publicly reported \citep{anthropic2025espionage}.
+\end{description}
+Public data observe L2 directly, L4 occasionally through threat reports, and L1 and L3 hardly at all. Our measurements are therefore lower bounds on AI involvement.
+
+\subsection{Why banks are exposed}
+Banks run the same commercial products as other large organisations. These include perimeter VPN and firewall appliances, managed file transfer (MFT), mail and collaboration servers, IT-management and remote-access tools, hypervisors, and enterprise applications. Banks also connect to shared infrastructures: real-time gross settlement (RTGS), retail payment switches, card networks, messaging networks and a small number of IT and cloud providers. A zero-day in a widely used product therefore produces \emph{correlated} exposure across institutions, which is the mechanism through which an operational event becomes a financial-stability event \citep{kashyap2019principles,eisenbach2022cyber,adelmann2020cyber}.
+
+%=====================================================================
+\section{Related literature}\label{sec:related}
+
+\paragraph{Vulnerability lifecycle and economics.} Empirical work has measured vulnerability disclosure and patching \citep{frei2006large,arora2010empirical}, the hidden lifetime of zero-days \citep{bilge2012before}, and the economics of exploit stockpiles \citep{ablon2017zero}. Exploitation-prediction models such as EPSS \citep{jacobs2021epss} and catalogues of known-exploited vulnerabilities \citep{cisa2021bod} reflect a shift from severity-based to evidence-based prioritisation. Annual reviews by Google Project Zero, Google's Threat Intelligence Group and Mandiant count in-the-wild zero-days \citep{stone2022review,mandiant2023zeroday,google2024zeroday,gtig2025zeroday} and document a concentration of exploitation on enterprise and perimeter products.
+
+\paragraph{AI offensive and defensive capability.} Benchmarks measure LLM capability on security tasks \citep{bhatt2023purple,zhang2024cybench,zhu2025cvebench}. Agent studies show exploitation of one-day \citep{fang2024oneday} and, with coordinated agent teams, zero-day web vulnerabilities \citep{zhu2024teams}. On the defensive side, Google's Big Sleep reported an exploitable SQLite bug before release \citep{bigsleep2024}. DARPA's AI Cyber Challenge showed cyber-reasoning systems finding and patching real open-source bugs \citep{darpa2025aixcc}, and AI developers have launched agentic security researchers \citep{openai2025aardvark,deepmind2025codemender} and restricted-access defensive programmes \citep{anthropic2026glasswing}. Threat-intelligence reports document misuse, ranging from reconnaissance and scripting \citep{microsoft2024threat} to largely autonomous intrusion operations \citep{anthropic2025espionage}. Most of this work measures capability in controlled settings; we add population-level evidence from the CVE corpus.
+
+\paragraph{Cyber risk and financial stability.} A macro-financial literature models how cyber events propagate: through payment-system impairment \citep{eisenbach2022cyber}, runs \citep{duffie2019cyber}, common exposures and concentration \citep{kashyap2019principles,healey2018future}, and loss distributions \citep{bouveret2018cyber,aldasoro2022drivers}. The IMF identified cyber risk as a growing macro-financial concern \citep{imf2024gfsr,adelmann2020cyber}. Standard setters have issued guidance on financial market infrastructure (FMI) resilience \citep{cpmi2016guidance}, a common lexicon \citep{fsb2018lexicon} and incident-reporting convergence \citep{fsb2023reporting,fsb2025fire}. Supervisors have run cyber stress tests \citep{ecb2024stress} and introduced oversight of critical third parties \citep{eu2022dora,boe2024ctp}. This literature rarely uses vulnerability-level data; we connect the two.
+
+\paragraph{Hardware security.} Research on payment cards \citep{murdoch2010chip,basin2021emv}, secure elements \citep{nemec2017roca,roche2024eucleak}, TPMs \citep{moghimi2020tpmfail}, HSMs \citep{campana2019hsm} and hardware wallets \citep{datko2018walletfail,kraken2020trezor} supplies the material for our discussion of hardware trust anchors.
+
+%=====================================================================
+\section{Data and methods}\label{sec:data}
+
+\subsection{CVE List V5}
+We downloaded the official bulk release of the CVE List V5 \citep{cveprogram2026} as of 12 November 2026 (425,189 files; 405,375 records in \texttt{PUBLISHED} state). For each record we extract dates, the assigning CVE Numbering Authority (CNA), the first affected vendor and product, the first CWE, the maximum CVSS base score across containers, the CISA ADP SSVC ``Exploitation'' field, and the free-text \texttt{credits}. Only 43.4\% of records published in 2026 carry any credit. Several of the largest commercial CNAs---Microsoft, Google Chrome, Apple, Oracle, SAP, Fortinet and the Linux kernel CNA---recorded none (Table~\ref{tab:vendor}).
+
+\subsection{Identifying AI-credited discoveries}
+We apply a lexicon of case-insensitive regular expressions to the credit text (Appendix Table~\ref{tab:lexicon}). \textbf{Tier~1} records name an AI model, agent or tool as finder or co-finder (for example ``Google Big Sleep'', ``XBOW'', ``Claude Security'', ``OpenAI Codex Security'', ``Fluid Attacks' AI SAST Scanner''). \textbf{Tier~2} records credit an AI-native security organisation or an AI laboratory without naming a model (for example AISLE, depthfirst, ZeroPath, Horizon3.ai, or ``OpenAI'' as an organisation). We reviewed random samples of matches for every pattern. This review led to three exclusions: a human researcher whose given name is Claude, a username containing ``gpt'', and the brand name of an established human bug-bounty programme whose name contains the letters ``AI'' (76 false matches before exclusion). Tier~2 is a proxy: AI tooling is likely but not certain for each record. Because credit coverage is incomplete and AI assistance at level L1 is rarely credited, all counts are lower bounds. We also classify the affected software into domains with keyword rules on vendor, product and CNA.
+
+\subsection{KEV exploitation panel}
+The KEV catalogue \citep{cisa2026kev} lists vulnerabilities with reliable evidence of in-the-wild exploitation. We map each entry to one of 15 product categories with ordered keyword rules (Appendix~\ref{app:rules}); 7.1\% remain unclassified. We merge the CVE publication date and compute the listing lag
+\begin{equation}
+\ell_i = d^{\text{KEV}}_i - d^{\text{pub}}_i \quad\text{(days)}.
+\end{equation}
+The catalogue opened on 3 November 2021 with a back-filled list, so we use lags only for CVEs published on or after that date ($n=898$).
+
+\paragraph{Zero-day proxy.} We call an entry \emph{early-listed} if $\ell_i \le 7$. A vulnerability that is already exploited when it is disclosed is typically listed within days, whereas n-days are listed after weeks or months. We benchmark annual counts of early-listed vulnerabilities against published industry counts of in-the-wild zero-days (Section~\ref{sec:exploitation}).
+
+\paragraph{Right-censoring.} Recent CVEs have had less time to be exploited and listed. For trend comparisons we therefore use a censoring-robust cohort: CVEs published from 2022 up to 180 days before the snapshot, counting only listings within 180 days of publication.
+
+\subsection{Bank-weighted exploitation pressure}
+Not every product category matters equally to banks. We assign a banking-relevance weight $w_c\in[0,1]$ to each category (Appendix Table~\ref{tab:weights}). Perimeter devices and MFT score 1.0; consumer routers and IoT 0.2; industrial control 0.1. Exploitation pressure is $\Pi_c = n_c w_c$, where $n_c$ is the number of post-launch KEV entries in category $c$; we split $\Pi_c$ into zero-day-like and later-listed parts. Because the weights are judgemental, we report the rank stability of $\Pi_c$ under 2,000 random perturbations of $\pm0.3$ and under uniform weights.
+
+\subsection{Curated case data}
+We coded 33 financial-sector incidents from 2011 to 2025 (Table~\ref{tab:incidents}) and 11 hardware trust-anchor cases (Table~\ref{tab:hardware}) from public reporting. The incident list is a \emph{purposive} sample of well-documented cases chosen to span victim types (commercial banks, central banks, supervisors, FMIs, payment and crypto firms), regions and vectors. Shares computed from it are descriptive, not estimates of population frequencies.
+
+\subsection{Thai group framework}
+We score 12 groups of Thai financial-system participants on five 1--5 dimensions: attractiveness $A$, systemic importance $S$, exposure $E$, shared-vendor concentration $K$ and defensive capacity $D$. From these we form a target index $T=(A+S)/2$, a vulnerability index $V=(E+K+(6-D))/3$, and a risk score
+\begin{equation}
+R = \frac{T\cdot V}{25}\in[0.04,1].
+\end{equation}
+Robustness is assessed over 10,000 draws that shift each score by $-1/0/{+1}$ (probabilities 0.25/0.5/0.25) and draw component weights from a Dirichlet(5) distribution. The scores are structured judgements about \emph{groups}; they say nothing about any individual institution.
+
+\subsection{Shared-vendor contagion model}\label{sec:model}
+We simulate one year of exploited-vulnerability events against a stylised system of 67 nodes whose group structure follows Thailand. The groups are 6 D-SIBs, 8 other domestic banks, 12 foreign banks, 6 specialised financial institutions (SFIs), 3 virtual banks, 25 payment and e-money providers, 5 shared IT providers and 2 payment FMIs (Table~\ref{tab:simgroups}). Each node runs one of five vendors in each of six enterprise technology layers; vendors are drawn according to market shares $\mathbf{s}$. Events arrive per layer as $N_l\sim\text{Poisson}(\lambda_l m_d (1-\phi))$, where $\lambda_l$ is the KEV event rate for publication years 2023--2025 (Table~\ref{tab:simlayers}), $m_d$ is an AI offence multiplier and $\phi$ is the share of bugs pre-empted by defensive AI. Each event hits vendor $j$ with probability $s_j$, and each user of that vendor runs the affected product with probability $\rho$.
+
+A share $p^{zd}_l$ of events (the early-listed share for that layer) start with a zero-day phase. In that phase, mass campaigns (probability $p_{\text{mass}}$) compromise each exposed node with probability $c_{\text{mass}}\,s_g\,\delta$. Targeted campaigns choose $\text{Poisson}(k\,m_o)$ victims weighted by attractiveness, where $m_o$ scales attacker operational throughput. In the n-day phase, copycat exploitation begins after a time-to-exploit $\tau$ for zero-days, or after $\kappa$ times an empirical KEV lag for n-days. Node $i$ is then exposed until its patch time $P_i\sim\text{LogNormal}(\ln(\beta\,\bar P_g),0.9)$ and is compromised with probability
+\begin{equation}
+1-\exp\!\big(-h\,m_o\,s_g\,\delta\,\max(0,P_i-\tau)\big).
+\end{equation}
+A compromised shared provider passes compromise to each of its eight clients with probability 0.25. A compromise disrupts payments with a group-specific probability. An event is \emph{systemic} if it disrupts at least 10\% of system payment value or any payment FMI. Scenario parameters are listed in Table~\ref{tab:simparams}. The model is comparative: absolute levels depend on assumptions, so we emphasise relative risks and test them over a grid of the two least-anchored parameters, $\rho$ and $c_{\text{mass}}$.
+
+\subsection{Reproducibility}
+The pipeline consists of nine scripts (\texttt{s01}--\texttt{s09}) that download, extract, classify, analyse, simulate and produce every table and figure. Every number quoted in the text is written to \texttt{outputs/key\_numbers.json}. Random seeds are fixed. The complete pipeline runs in under ten minutes on one CPU core with 3~GB of memory.
+
+\input{body1}
+\input{body2}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\input{appendix}
+\end{document}

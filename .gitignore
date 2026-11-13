@@ -1,0 +1,15 @@
+# large public inputs (re-downloaded by src/s00_fetch_data.sh)
+data/raw/
+data/processed/cve_records.csv.gz
+# python / LaTeX build artefacts (main.bbl is kept: arXiv needs it)
+__pycache__/
+*.pyc
+paper/main.pdf
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+outputs/figures/*.pdf

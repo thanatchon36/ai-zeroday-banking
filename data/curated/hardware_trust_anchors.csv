@@ -1,0 +1,12 @@
+case_id,year,target,component_class,attack_class,access_required,patchable,banking_analogue,confidence
+H01,2010,EMV chip-and-PIN cards,Payment card protocol,Protocol logic flaw (PIN verification bypass),Physical card and modified terminal,Protocol/issuer change,Card-present payments,High
+H02,2017,Infineon RSA key generation (ROCA),Secure-element crypto library,Weak key generation (factorable public keys),Remote (public key only),Key regeneration and firmware update,Smart cards; tokens; TPMs; national ID used for e-banking,High
+H03,2018,Trezor; Ledger; KeepKey (wallet.fail),Hardware wallet,Fault injection and supply-chain tampering,Physical device,Partly (hardware fixes),Hardware authentication tokens; HSM tamper resistance,High
+H04,2019,Apple BootROM A5-A11 (checkm8),Mobile boot chain,Unpatchable BootROM memory-safety bug,Physical (USB),No (hardware),Integrity of phones running mobile banking,High
+H05,2019,General-purpose HSM (research disclosure),Hardware security module,Firmware memory-safety bugs enabling key extraction,Network/API access to HSM,Yes (firmware),Payment and PIN HSMs in bank data centres,Medium
+H06,2019,Intel fTPM and STMicro TPM (TPM-Fail),Trusted platform module,Timing side channel on ECDSA,Local or network timing,Yes (firmware),Server attestation and key storage,High
+H07,2020,Trezor One/T seed extraction,Hardware wallet,Voltage glitching of microcontroller,Physical (minutes),No (hardware),Stolen token or HSM scenarios,High
+H08,2021,EMV contactless (Visa PIN bypass),Payment card protocol,Protocol flaw allowing PIN bypass,Physical proximity (relay),Protocol/kernel change,Contactless payments,High
+H09,2023,Ledger Connect Kit,Wallet software supply chain,Malicious library version published via compromised account,Remote,Yes (version revoked),Banking SDKs and front-end libraries,High
+H10,2024,Infineon ECDSA in YubiKey 5 (EUCLEAK),Secure element,Electromagnetic side channel,Physical (lab equipment),No (hardware; firmware for new units),FIDO keys used by bank staff,High
+H11,2025,Bybit cold-wallet signing (Safe interface),Transaction-signing workflow,Manipulated transaction display (blind signing),Remote (supplier compromise),Process and interface fix,Maker-checker payment approval screens,High
