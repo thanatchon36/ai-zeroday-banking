@@ -1,12 +1,12 @@
-<p align="center"><a href="paper.pdf"><img src="outputs/figures/fig02_cve_volume.png" alt="Zero-Days at Machine Speed: CVE publication volume, 2026 surge" width="100%"></a></p>
+<p align="center"><a href="paper.pdf"><img src="docs/assets/banner.png" alt="Zero-Days at Machine Speed: monthly CVE publications and AI-credited CVEs, 2024-2026" width="100%"></a></p>
 
 <p align="center">
-<a href="requirements.txt"><img src="https://img.shields.io/badge/python-3.10%2B-e5484d?style=flat-square&labelColor=0b1020" alt="Python 3.10+"></a>
-<a href="paper.pdf"><img src="https://img.shields.io/badge/paper-PDF-e5484d?style=flat-square&labelColor=0b1020" alt="Paper PDF"></a>
-<a href="paper/"><img src="https://img.shields.io/badge/arXiv-cs.CR%20%C2%B7%20cs.AI%20%C2%B7%20q--fin.RM-e5484d?style=flat-square&labelColor=0b1020" alt="arXiv category"></a>
-<a href="#data-sources"><img src="https://img.shields.io/badge/data-public%20(CVE%20%2B%20KEV)-8a1c1f?style=flat-square&labelColor=0b1020" alt="Data: public"></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-ffd1d3?style=flat-square&labelColor=0b1020" alt="Code license MIT"></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/paper%20%26%20data-CC%20BY%204.0-ffd1d3?style=flat-square&labelColor=0b1020" alt="Paper and data CC BY 4.0"></a>
+<a href="requirements.txt"><img src="https://img.shields.io/badge/python-3.10%2B-f5a623?style=flat-square&labelColor=0b1020" alt="Python 3.10+"></a>
+<a href="paper.pdf"><img src="https://img.shields.io/badge/paper-PDF-f5a623?style=flat-square&labelColor=0b1020" alt="Paper PDF"></a>
+<a href="paper/"><img src="https://img.shields.io/badge/arXiv-cs.CR%20%C2%B7%20cs.AI%20%C2%B7%20q--fin.RM-f5a623?style=flat-square&labelColor=0b1020" alt="arXiv category"></a>
+<a href="#data-sources"><img src="https://img.shields.io/badge/data-public%20(CVE%20%2B%20KEV)-b0560f?style=flat-square&labelColor=0b1020" alt="Data: public"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-ffe8a3?style=flat-square&labelColor=0b1020" alt="Code license MIT"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/paper%20%26%20data-CC%20BY%204.0-ffe8a3?style=flat-square&labelColor=0b1020" alt="Paper and data CC BY 4.0"></a>
 </p>
 
 <p align="center">
@@ -99,6 +99,7 @@ It draws ten implications for central banks.
 ```
 src/
   s00_fetch_data.sh         download CVE List V5 + CISA KEV
+  s10_banner.py             dark README banner -> docs/assets/banner.png
   s01..s09_*.py             extract, AI credits, KEV panel, analysis, cases, Thai framework,
                             simulation, figures, LaTeX tables
 run_all.sh                  the whole pipeline end to end
