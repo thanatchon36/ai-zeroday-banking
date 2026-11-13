@@ -20,8 +20,7 @@
 🔢 <b><a href="outputs/key_numbers.json">Key numbers</a></b> ·
 🗂️ <b><a href="data/curated/">Curated data</a></b> ·
 🤗 <b><a href="https://huggingface.co/datasets/thanatchon36/ai-zeroday-banking">Dataset</a></b> ·
-🧮 <b><a href="https://huggingface.co/thanatchon36/ai-zeroday-banking">Model</a></b> ·
-📣 <b><a href="docs/linkedin_post.md">LinkedIn post</a></b>
+🧮 <b><a href="https://huggingface.co/thanatchon36/ai-zeroday-banking">Model</a></b>
 </p>
 
 **AI-driven vulnerability discovery, systemic cyber risk in banking, and implications for central banks**,
